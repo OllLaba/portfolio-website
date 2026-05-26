@@ -938,7 +938,30 @@ footer {
     font-size: 18px;
     line-height: 1.2;
 }
+.floating-resume-button {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 1000;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 22px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    transition: transform .3s ease, opacity .3s ease;
+}
 
+.floating-resume-button:hover {
+    transform: translateY(-3px);
+    opacity: .85;
+}
 @media (max-width: 768px) {
   .project-popup-content {
     width: 100%;
