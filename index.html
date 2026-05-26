@@ -297,7 +297,7 @@
                 <h2>Досвід роботи</h2>
                 </div>
                 <div class="resume-title-right">
-                    <button class="button" id="open-resume"><span>Повне резюме (PDF)</span></button>
+                    <button class="button" id="open-resume" data-resume-popup-open><span>Повне резюме (PDF)</span></button>
                 </div>
            </div>
            <div class="resume-experience">
@@ -355,12 +355,33 @@
 <footer >
     <div class="container">
         <div class="footer">
-            <p>© 2023 Olga Laba | Shopify & Front-end Developer</p>
+            <p>© 2026 Olga Laba | Shopify & Front-end Developer</p>
         </div>
     </div>
 </footer>
-<button class="floating-resume-button" id="open-resume-popup">
-    <span>Резюме (PDF)</span>
+
+<button class="floating-resume-button" type="button" data-resume-popup-open>
+  Переглянути резюме
 </button>
+
+<div class="project-popup resume-popup" id="resumePopup" aria-hidden="true">
+  <div class="project-popup-overlay" data-resume-popup-close></div>
+
+  <div class="project-popup-content resume-popup-content">
+
+    <button class="project-popup-close resume-popup-close" type="button" data-resume-popup-close>
+      ×
+    </button>
+
+    <div class="resume-popup-frame-wrapper">
+      <iframe
+        class="resume-popup-frame"
+        src="img/Resume.pdf"
+        title="Resume PDF"
+      ></iframe>
+    </div>
+
+  </div>
+</div>
 </body>
 </html>

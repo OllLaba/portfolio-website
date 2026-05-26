@@ -105,3 +105,39 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', setActiveExperienceItem);
     window.addEventListener('resize', setActiveExperienceItem);
 });
+
+
+//Поп ап резюме
+  document.addEventListener('DOMContentLoaded', function () {
+    const resumePopup = document.getElementById('resumePopup');
+    const openButtons = document.querySelectorAll('[data-resume-popup-open]');
+    const closeButtons = document.querySelectorAll('[data-resume-popup-close]');
+
+    if (!resumePopup) return;
+
+    function openResumePopup() {
+      resumePopup.classList.add('active');
+      resumePopup.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('popup-open');
+    }
+
+    function closeResumePopup() {
+      resumePopup.classList.remove('active');
+      resumePopup.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('popup-open');
+    }
+
+    openButtons.forEach(function (button) {
+      button.addEventListener('click', openResumePopup);
+    });
+
+    closeButtons.forEach(function (button) {
+      button.addEventListener('click', closeResumePopup);
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && resumePopup.classList.contains('active')) {
+        closeResumePopup();
+      }
+    });
+  });
