@@ -109,9 +109,15 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!resumePopup) return;
 
   function openResumePopup() {
-    resumePopup.classList.add('active');
-    resumePopup.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('popup-open');
+    const resumeFrame = resumePopup.querySelector('.resume-popup-frame');
+
+  if (resumeFrame && !resumeFrame.src) {
+    resumeFrame.src = resumeFrame.dataset.src;
+  }
+
+  resumePopup.classList.add('active');
+  resumePopup.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('popup-open');
   }
 
   function closeResumePopup() {
