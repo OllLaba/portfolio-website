@@ -1234,7 +1234,7 @@ a.button {
     .icons-block-item {
         width: auto;
         min-width: 100%;
-        scroll-snap-align: start;
+        scroll-snap-align: center;
         min-height: 210px;
         padding: 20px;
         gap: 22px;
