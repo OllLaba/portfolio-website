@@ -111,13 +111,20 @@ document.addEventListener('DOMContentLoaded', function () {
   function openResumePopup() {
     const resumeFrame = resumePopup.querySelector('.resume-popup-frame');
 
-  if (resumeFrame && !resumeFrame.src) {
-    resumeFrame.src = resumeFrame.dataset.src;
-  }
+    if (resumeFrame && !resumeFrame.src) {
+      resumeFrame.src = resumeFrame.dataset.src;
+    }
 
-  resumePopup.classList.add('active');
-  resumePopup.setAttribute('aria-hidden', 'false');
-  document.body.classList.add('popup-open');
+    // Google Analytics event
+    if (typeof gtag === 'function') {
+      gtag('event', 'resume_open', {
+        file_name: 'Olha_Laba_Resume.pdf'
+      });
+    }
+
+    resumePopup.classList.add('active');
+    resumePopup.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('popup-open');
   }
 
   function closeResumePopup() {
@@ -140,7 +147,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
-
 
 //Плаваюча кнопка резюме
 document.addEventListener('DOMContentLoaded', function () {
