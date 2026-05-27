@@ -1282,7 +1282,7 @@ a.button {
 
     .icons-block-item {
         min-width: 100%;
-        scroll-snap-align: start;
+        scroll-snap-align: center;
     }
 
     .mobile-dots {
